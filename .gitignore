@@ -8,3 +8,4 @@ SpecRunner.html
 pack
 testem/compiled
 /.idea/
+/package-lock.json
