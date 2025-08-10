@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bug Finder Extension Options</title>
+    <style>
+        body: {
+            padding: 10px;
+        }
+
+        .file-selector {
+            display: none;
+        }
+
+        .sourceCell {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        #main {
+            height: 400px;
+            min-height: 300px;
+        }
+
+        #main th, #main td {
+            text-align: left;
+        }
+
+        #main table {
+            width: 100%;
+        }
+
+        .status {
+            color: red;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        #sourceLocal:checked ~ [role="local-file"] {
+            display: block;
+        }
+
+        #sourceConfig:checked ~ [role="text-config"] {
+            display: block;
+        }
+
+        #sourceRemote:checked ~ [role="remote-config"] {
+            display: block;
+        }
+
+        textarea[role=custom-config-text] {
+            width: 100%;
+        }
+
+        .container {
+            max-height: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+
+        [role="main-screen"] div {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div role="status" class="status"></div>
+    <div role="main-screen">
+        <div>
+            <form action="#">
+                <label><input type="checkbox" role="option-skipStandard"> Hide standard menus</label>
+            </form>
+        </div>
+        <div>
+            <form action="#">
+                <button role="add">Add Configuration File</button>
+                <button role="close">Close</button>
+            </form>
+        </div>
+        <div role="no-custom">
+            There are no custom configuration files loaded.
+        </div>
+        <div role="yes-custom">
+            Custom configuration files currently loaded:
+            <div class="container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Source</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr role="template">
+                        <td role="name"></td>
+                        <td role="source" class="sourceCell"></td>
+                        <td>
+                            <button role="remove">Remove</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div role="file-loader">
+        <form action="#">
+            <input type="radio" value="local" name="source" id="sourceLocal" checked="checked"><label for="sourceLocal">Local
+            file</label>
+            <input type="radio" value="remote" name="source" id="sourceRemote"><label for="sourceRemote">Remote
+            URL</label>
+            <input type="radio" value="source" name="source" id="sourceConfig"><label for="sourceConfig">Paste
+            configuration</label>
+            <div>
+                <label>Descriptive submenu label (required): <input type="text" role="submenu-name"
+                                                                    required="true"/></label>
+            </div>
+            <div class="tab" role="local-file">
+                <button role="select-file-cover" class="select-file-cover">
+                    Select File
+                </button>
+                <button role="back">Cancel</button>
+                <input type="file" role="file-selector" class="file-selector"/>
+            </div>
+            <div class="tab" role="text-config">
+                <textarea role="custom-config-text" placeholder="paste configuration JSON"></textarea>
+                <div>
+                    <button role="add-custom-config">Save</button>
+                    <button role="back">Cancel</button>
+                </div>
+            </div>
+            <div class="tab" role="remote-config">
+                URL: <input role="remote-config-url" placeholder="JSON file URL"/>
+                <div>
+                    <button role="add-remote-config">Load</button>
+                    <button role="back">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "Bug Finder",
+  "description": "Right-click context menu to help with exploratory testing",
+  "version": "4.0",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "optional_permissions": [
+    "clipboardWrite",
+    "clipboardRead"
+  ],
+  "background": {
+    "service_worker": "extension.js",
+    "type": "module"
+  },
+  "manifest_version": 3,
+  "icons": {
+    "128": "bug-finder-128.png",
+    "48": "bug-finder-48.png",
+    "32": "bug-finder-32.png",
+    "16": "bug-finder-16.png"
+  },
+  "homepage_url": "https://github.com/kozikoff/bug-finder",
+  "author": "Valentin Kozikov https://github.com/kozikoff",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "action": {}
+}
