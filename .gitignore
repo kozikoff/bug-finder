@@ -7,3 +7,4 @@ SpecRunner.html
 .DS_Store
 pack
 testem/compiled
+/.idea/
