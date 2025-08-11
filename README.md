@@ -1,6 +1,7 @@
 <p align="center"> 
 <img src="screenshots/logo.png" alt="Bug Finder logo" width="160" />
 </p>
+
 # Bug Finder — Exploratory Testing extension for Chrome
 
 [Bug Finder](https://github.com/kozikoff/bug-finder) makes exploratory testing easier by providing quick access to common problematic values and edge cases right from the context menu (right-click) on editable elements. Keep these useful test inputs handy and insert them effortlessly during your testing sessions.
