@@ -82,7 +82,8 @@ module.exports = function ContextMenu(standardConfig, browserInterface, menuBuil
 			});
 		};
 	self.init = function () {
-		return browserInterface.getOptionsAsync()
+		return menuBuilder.removeAll()
+			.then(browserInterface.getOptionsAsync)
 			.then(rebuildMenu)
 			.then(wireStorageListener);
 	};
