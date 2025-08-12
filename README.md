@@ -20,7 +20,7 @@ This extension is a modern continuation of the original [Bug Magnet](https://git
 
 ## How to Use
 
-The easiest way to install is via the [Chrome Web Store](https://chrome.google.com/webstore/detail/eeeeeeeeeeeee).
+The easiest way to install is via the [Chrome Web Store](https://chrome.google.com/webstore/detail/jclblkcggoblecgkfllockhgpfbjpmfp).
 
 After installing, just right-click any editable element on a page, select the **Bug Finder** submenu, and click the value you want to insert — it will be added to the field automatically.
 
