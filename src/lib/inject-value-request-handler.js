@@ -2,6 +2,6 @@ module.exports = function injectValueRequestHandler(browserInterface, tabId, req
 	'use strict';
 	const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 	return browserInterface.executeScript(tabId, '/inject-value.js')
-		.then(() => delay(25))
+		.then(() => delay(250))
 		.then(() => browserInterface.sendMessage(tabId, requestValue));
 };
