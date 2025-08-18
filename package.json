@@ -1,6 +1,6 @@
 {
   "name": "bugfinder",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "scripts": {
     "lint": "eslint src test",
     "pretest": "npm run lint && rm -rf testem/compiled",
