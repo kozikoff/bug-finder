@@ -1,7 +1,7 @@
 {
   "name": "Bug Finder",
   "description": "Right-click for a context menu to fill any field with useful test data",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "permissions": [
     "contextMenus",
     "storage",
