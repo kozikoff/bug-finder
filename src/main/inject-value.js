@@ -6,3 +6,6 @@ const executeRequest = require('../lib/inject-value-to-active-element'),
 		chrome.runtime.onMessage.removeListener(listener);
 	};
 chrome.runtime.onMessage.addListener(listener);
+
+// Return a value to signal that the listener has been registered
+'READY';
