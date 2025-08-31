@@ -23,7 +23,7 @@ module.exports = function ChromeBrowserInterface(chrome) {
 		chrome.storage.onChanged.addListener(function (changes, areaName) {
 			if (areaName === 'sync') {
 				listener(changes);
-			};
+			}
 		});
 	};
 	self.getRemoteFile = function (url) {
