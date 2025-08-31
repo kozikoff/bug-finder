@@ -52,11 +52,22 @@ module.exports = function ChromeBrowserInterface(chrome) {
 		});
 	};
 	self.executeScript = function (tabId, source) {
-		return new Promise((resolve) => {
-			return chrome.scripting.executeScript({
-				target: {tabId: tabId},
-				files: [source]
-			}).then(resolve);
+		return chrome.scripting.executeScript({
+			target: {tabId: tabId},
+			files: [source]
+		}).then(results => {
+			// Return the result from the first (and only) frame
+			return results && results[0] && results[0].result;
+		});
+	};
+	self.executeInlineScript = function (tabId, func, args) {
+		return chrome.scripting.executeScript({
+			target: {tabId: tabId},
+			func: func,
+			args: args || []
+		}).then(results => {
+			// Return the result from the first (and only) frame
+			return results && results[0] && results[0].result;
 		});
 	};
 	self.sendMessage = function (tabId, message) {
